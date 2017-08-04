@@ -9,8 +9,7 @@ public class Hello{
         this.text = text;
     }
 
-    public Hello() {
-    }
+    public Hello() {}
 
     private String getText() {
         return this.text;
@@ -20,20 +19,23 @@ public class Hello{
         this.text = text;
     }
 
-    public void doGreet(){
+    public String doGreet(){
         String tmp = this.getText();
         if (tmp != null){
-            System.out.println(tmp);
+            return tmp;
         }
         else{
-            System.out.println("No greating for you.");
+            return "No greating for you.";
         }
-
     }
 
-    public void tellTime(){
-        LocalTime currentTime = new LocalTime();
-        System.out.println("The current local time is: " + currentTime);
+    private LocalTime getTime(){
+        return new LocalTime();
+    }
+
+    public String tellTime(){
+        LocalTime time = getTime();
+        return "The current local time is: " + time;
     }
 
 }
