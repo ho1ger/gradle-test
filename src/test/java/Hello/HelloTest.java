@@ -12,12 +12,12 @@ public class HelloTest{
 
     public HelloTest() {
     }
-    
+
     @Test
     public void testTime() throws Exception {
         Hello hello = new Hello();
         String time = hello.tellTime();
-        Pattern p = Pattern.compile("[A-Za-z: ]+[\\d]{2}:[\\d]{2}:[\\d]{2}.[\\d]{1,3}");
+        Pattern p = Pattern.compile("[A-Za-z:]+[\\d]{2}:[\\d]{2}:[\\d]{2}.[\\d]{1,3}");
         Matcher m = p.matcher(time);
         assertTrue(time.length() > 0);
         assertTrue(m.matches() == true);
